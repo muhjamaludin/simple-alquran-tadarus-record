@@ -43,7 +43,7 @@ require_once("config.php");
         <div class="container-fluid">
             <div class="col-md-12">
                 <div class="page-header clearfix">
-                    <h2 class="pull-left">Rekaman Bacaan Alquran</h2>
+                    <h2 class="pull-left"><?= TITLE_HOME ?></h2>
                     <a href="create.php" class="btn btn-success pull-right">Tambah Baru</a>
                 </div>
                 <div class="mt-2">
