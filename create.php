@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $new_datas = $datas;
     array_unshift($new_datas, $inputs);
 
-    $success_write = file_put_contents($file_name, json_encode($new_datas, JSON_PRETTY_PRINT));
+    $success_write = file_put_contents(FILE_NAME, json_encode($new_datas, JSON_PRETTY_PRINT));
     if ($success_write === FALSE) {
         echo "Oops something wrong here.";
     } else {
