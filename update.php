@@ -89,40 +89,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 require_once("template/header.php");
 ?>
 
-<div class="wrapper">
-    <div class="container-fluid">
-        <div class="col-md-12">
-            <div class="page-header">
-                <h2>Edit Record</h2>
-            </div>
-            <p>Silakan isi form di bawah ini kemudian submit untuk menambahkan</p>
-            <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
-                <div class="form-group <?= (!empty($juz_err)) ? 'has-error' : '' ?>">
-                    <label>Juz</label>
-                    <input type="number" name="juz" class="form-control" value="<?= $juz ?>">
-                    <span class="help-block"><?= $juz_err ?></span>
-                </div>
-                <div class="form-group <?= (!empty($surah_err)) ? 'has-error' : '' ?>">
-                    <label>Surah</label>
-                    <input type="text" name="surah" class="form-control" value="<?= $surah ?>">
-                    <span class="help-block"><?= $surah_err ?></span>
-                </div>
-                <div class="form-group <?= (!empty($ayat_err)) ? 'has-error' : '' ?>">
-                    <label>Ayat</label>
-                    <input type="number" name="ayat" class="form-control" value="<?= $ayat ?>">
-                    <span class="help-block"><?= $ayat_err ?></span>
-                </div>
-                <div class="form-group <?= (!empty($ayat_err)) ? 'has-error' : '' ?>">
-                    <label>Tanggal</label>
-                    <input type="datetime-local" name="tanggal" class="form-control" value="<?= $tanggal ?>">
-                    <span class="help-block"><?= $tanggal_err ?></span>
-                </div>
-                <input type="hidden" name="id" value="<?= $id ?>">
-                <input type="submit" value="Update" class="btn btn-primary">
-                <a href="index.php" class="btn btn-default">Go Back</a>
-            </form>
-        </div>
+<div class="col-md-12">
+    <div class="page-header">
+        <h2>Edit Record</h2>
     </div>
+    <p>Silakan isi form di bawah ini kemudian submit untuk menambahkan</p>
+    <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+        <div class="form-group <?= (!empty($juz_err)) ? 'has-error' : '' ?>">
+            <label>Juz</label>
+            <input type="number" name="juz" class="form-control" value="<?= $juz ?>">
+            <span class="help-block"><?= $juz_err ?></span>
+        </div>
+        <div class="form-group <?= (!empty($surah_err)) ? 'has-error' : '' ?>">
+            <label>Surah</label>
+            <input type="text" name="surah" class="form-control" value="<?= $surah ?>">
+            <span class="help-block"><?= $surah_err ?></span>
+        </div>
+        <div class="form-group <?= (!empty($ayat_err)) ? 'has-error' : '' ?>">
+            <label>Ayat</label>
+            <input type="number" name="ayat" class="form-control" value="<?= $ayat ?>">
+            <span class="help-block"><?= $ayat_err ?></span>
+        </div>
+        <div class="form-group <?= (!empty($ayat_err)) ? 'has-error' : '' ?>">
+            <label>Tanggal</label>
+            <input type="datetime-local" name="tanggal" class="form-control" value="<?= $tanggal ?>">
+            <span class="help-block"><?= $tanggal_err ?></span>
+        </div>
+        <input type="hidden" name="id" value="<?= $id ?>">
+        <input type="submit" value="Update" class="btn btn-primary">
+        <a href="index.php" class="btn btn-default">Go Back</a>
+    </form>
 </div>
 
 <?php
