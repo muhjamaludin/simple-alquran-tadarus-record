@@ -1,5 +1,6 @@
 <?php
 require_once("config.php");
+$head_title = "Update Records";
 
 // define variables and initialize with empty values
 $juz = $surah = $ayat = $tanggal = $jam = "";
@@ -84,78 +85,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once("template/header.php");
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Record</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-
-    <style type="text/css">
-        .wrapper {
-            width: 650px;
-            margin: 0 auto;
-        }
-
-        .page-header h2 {
-            margin-top: 0;
-        }
-
-        table tr td:last-child a {
-            margin-right: 15px;
-        }
-    </style>
-
-    <script type="text/javascript">
-        $(document).ready(() => {
-            $('[data-toggle="tooltip"]').tooltip();
-        })
-    </script>
-</head>
-
-<body>
-    <div class="wrapper">
-        <div class="container-fluid">
-            <div class="col-md-12">
-                <div class="page-header">
-                    <h2>Edit Record</h2>
-                </div>
-                <p>Silakan isi form di bawah ini kemudian submit untuk menambahkan</p>
-                <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
-                    <div class="form-group <?= (!empty($juz_err)) ? 'has-error' : '' ?>">
-                        <label>Juz</label>
-                        <input type="number" name="juz" class="form-control" value="<?= $juz ?>">
-                        <span class="help-block"><?= $juz_err ?></span>
-                    </div>
-                    <div class="form-group <?= (!empty($surah_err)) ? 'has-error' : '' ?>">
-                        <label>Surah</label>
-                        <input type="text" name="surah" class="form-control" value="<?= $surah ?>">
-                        <span class="help-block"><?= $surah_err ?></span>
-                    </div>
-                    <div class="form-group <?= (!empty($ayat_err)) ? 'has-error' : '' ?>">
-                        <label>Ayat</label>
-                        <input type="number" name="ayat" class="form-control" value="<?= $ayat ?>">
-                        <span class="help-block"><?= $ayat_err ?></span>
-                    </div>
-                    <div class="form-group <?= (!empty($ayat_err)) ? 'has-error' : '' ?>">
-                        <label>Tanggal</label>
-                        <input type="datetime-local" name="tanggal" class="form-control" value="<?= $tanggal ?>">
-                        <span class="help-block"><?= $tanggal_err ?></span>
-                    </div>
-                    <input type="hidden" name="id" value="<?= $id ?>">
-                    <input type="submit" value="Update" class="btn btn-primary">
-                    <a href="index.php" class="btn btn-default">Go Back</a>
-                </form>
+<div class="wrapper">
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h2>Edit Record</h2>
             </div>
+            <p>Silakan isi form di bawah ini kemudian submit untuk menambahkan</p>
+            <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+                <div class="form-group <?= (!empty($juz_err)) ? 'has-error' : '' ?>">
+                    <label>Juz</label>
+                    <input type="number" name="juz" class="form-control" value="<?= $juz ?>">
+                    <span class="help-block"><?= $juz_err ?></span>
+                </div>
+                <div class="form-group <?= (!empty($surah_err)) ? 'has-error' : '' ?>">
+                    <label>Surah</label>
+                    <input type="text" name="surah" class="form-control" value="<?= $surah ?>">
+                    <span class="help-block"><?= $surah_err ?></span>
+                </div>
+                <div class="form-group <?= (!empty($ayat_err)) ? 'has-error' : '' ?>">
+                    <label>Ayat</label>
+                    <input type="number" name="ayat" class="form-control" value="<?= $ayat ?>">
+                    <span class="help-block"><?= $ayat_err ?></span>
+                </div>
+                <div class="form-group <?= (!empty($ayat_err)) ? 'has-error' : '' ?>">
+                    <label>Tanggal</label>
+                    <input type="datetime-local" name="tanggal" class="form-control" value="<?= $tanggal ?>">
+                    <span class="help-block"><?= $tanggal_err ?></span>
+                </div>
+                <input type="hidden" name="id" value="<?= $id ?>">
+                <input type="submit" value="Update" class="btn btn-primary">
+                <a href="index.php" class="btn btn-default">Go Back</a>
+            </form>
         </div>
     </div>
-</body>
+</div>
 
-</html>
+<?php
+require_once("template/footer.php");
+?>
